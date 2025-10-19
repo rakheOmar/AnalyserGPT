@@ -1,0 +1,15 @@
+# Core dependencies
+pydantic
+dotenv
+fastapi
+uvicorn[standard]
+httpx
+streamlit
+
+# Autogen and extensions
+autogenstudio
+autogen-agentchat
+autogen-core
+autogen-ext[openai]
+autogen-ext[ollama]
+autogen-ext[anthropic]

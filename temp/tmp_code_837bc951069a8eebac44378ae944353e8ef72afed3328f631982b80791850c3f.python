@@ -1,0 +1,29 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the dataset
+try:
+    df = pd.read_csv('titanic.csv')
+except FileNotFoundError:
+    print("Error: titanic.csv not found. Please ensure the file is in the working directory.")
+    exit()
+
+# Map the 'Survived' column for better labels on the plot
+# 0: Died, 1: Survived
+df['Survival Status'] = df['Survived'].map({0: 'Died', 1: 'Survived'})
+
+# Create the count plot
+plt.figure(figsize=(6, 5))
+sns.countplot(x='Survival Status', data=df, palette='viridis')
+
+# Add title and labels
+plt.title('Survival Status on the Titanic')
+plt.xlabel('Status')
+plt.ylabel('Number of Passengers')
+plt.xticks(ticks=[0, 1], labels=['Died', 'Survived']) # Explicitly set x-tick labels
+
+# Save the plot
+plt.savefig('output.png')
+
+print("Graph of Survived vs. Died saved as output.png")

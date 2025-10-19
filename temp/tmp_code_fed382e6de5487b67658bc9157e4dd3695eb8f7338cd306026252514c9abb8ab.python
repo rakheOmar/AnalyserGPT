@@ -1,0 +1,27 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load data from CSV file
+data = pd.read_csv('titanic.csv')
+
+# Check if 'Survived' column exists in the dataset
+if 'Survived' not in data.columns:
+    print("The 'Survived' column is missing from the dataset.")
+else:
+    # Count the number of survivors and non-survivors
+    survival_counts = data['Survived'].value_counts()
+
+    # Create a bar plot for survived vs. died counts
+    plt.figure(figsize=(8, 6))
+    sns.barplot(x=survival_counts.index, y=survival_counts.values)
+    
+    # Set plot labels and title
+    plt.xlabel('Survival Status (0 = Died, 1 = Survived)')
+    plt.ylabel('Count')
+    plt.title('Number of Survivors vs. Non-Survivors on the Titanic')
+
+    # Save the plot as an image file
+    plt.savefig('output.png')
+
+    print("Plot saved as 'output.png'.")
