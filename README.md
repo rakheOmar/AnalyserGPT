@@ -1,5 +1,10 @@
 # AnalyserGPT
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b837454a-10ce-43d4-882e-36d6987d5127" alt="Image 1" width="48%">
+  <img src="https://github.com/user-attachments/assets/3da7134d-f225-4c76-ba1f-52b4250e29d1" alt="Image 2" width="48%">
+</p>
+
 AnalyserGPT is a powerful data analysis tool that leverages AI to process datasets, generate insights, and create visualizations. Designed for simplicity and efficiency, it integrates seamlessly with Docker and OpenAI models to deliver robust analysis capabilities.
 
 ## Features
@@ -8,6 +13,8 @@ AnalyserGPT is a powerful data analysis tool that leverages AI to process datase
 - **Visualization**: Create graphs and save them as image files.
 - **Text Summaries**: Generate textual summaries of data insights.
 - **Docker Integration**: Runs in a Dockerized environment for easy setup and isolation.
+
+
 
 ## Prerequisites
 
@@ -34,7 +41,7 @@ AnalyserGPT is a powerful data analysis tool that leverages AI to process datase
 
 1. Start the Docker container:
    ```bash
-   uv run main.py
+   streamlit run .\streamlit-ui.py
    ```
 2. Provide tasks like:
    ```
