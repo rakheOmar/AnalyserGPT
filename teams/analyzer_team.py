@@ -3,6 +3,7 @@ from autogen_agentchat.teams import RoundRobinGroupChat
 
 from agents.code_executor_agent import get_code_executor_agent
 from agents.data_analyzer_agent import get_data_analyzer_agent
+from config.constants import MAX_TURNS
 
 
 def get_data_analyzer_team(docker, model_client):
@@ -13,7 +14,7 @@ def get_data_analyzer_team(docker, model_client):
 
     team = RoundRobinGroupChat(
         participants=[data_analyzer_agent, code_executor_agent],
-        max_turns=20,
+        max_turns=MAX_TURNS,
         termination_condition=text_mention_termination,
     )
 

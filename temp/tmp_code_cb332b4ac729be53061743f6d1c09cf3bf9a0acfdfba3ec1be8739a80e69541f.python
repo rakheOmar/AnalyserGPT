@@ -1,9 +1,0 @@
-import pandas as pd
-
-# Load the dataset
-try:
-    df = pd.read_csv('titanic.csv')
-    print("First 5 rows of the titanic.csv dataset:")
-    print(df.head())
-except FileNotFoundError:
-    print("Error: titanic.csv not found. Please ensure the file is in the working directory.")

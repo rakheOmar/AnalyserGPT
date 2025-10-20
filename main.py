@@ -19,7 +19,7 @@ async def main():
     team = get_data_analyzer_team(docker, openai_model_client)
 
     try:
-        task = "Can you give me a graph of survived and died in my data titanic.csv and save it as output.png"
+        task = "Can you analyze the titanic.csv dataset, generate a graph of survived and died passengers grouped by class, and save it as output.png? Additionally, provide a summary of the survival rate for each class in a text file named summary.md"
 
         await start_docker_container(docker)
 
@@ -30,7 +30,7 @@ async def main():
 
             elif isinstance(message, TaskResult):
                 print("Stop Reason :", message.stop_reason)
-
+    
     except Exception as e:
         print(e)
     finally:

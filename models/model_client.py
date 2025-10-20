@@ -28,7 +28,7 @@ gemini_model_client = OpenAIChatCompletionClient(
 open_router_model_client = OpenAIChatCompletionClient(
     base_url="https://openrouter.ai/api/v1",
     api_key=OPEN_ROUTER,  # type: ignore
-    model="mistralai/mistral-small-3.2-24b-instruct:free",
+    model="z-ai/glm-4.5-air:free",
     model_info={
         "vision": True,
         "function_calling": True,
@@ -53,7 +53,7 @@ anthropic_model_client = AnthropicChatCompletionClient(
 
 
 ollama_model_client = OllamaChatCompletionClient(
-    model="phi4",
+    model="dolphin3:latest",
     model_info={
         "vision": True,
         "function_calling": True,
@@ -65,4 +65,4 @@ ollama_model_client = OllamaChatCompletionClient(
 
 
 def get_model_client():
-    return ollama_model_client
+    return open_router_model_client
