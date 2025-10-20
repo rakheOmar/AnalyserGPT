@@ -10,7 +10,7 @@ def get_data_analyzer_team(docker, model_client):
     code_executor_agent = get_code_executor_agent(docker)
     data_analyzer_agent = get_data_analyzer_agent(model_client)
 
-    text_mention_termination = TextMentionTermination("STOP")
+    text_mention_termination = TextMentionTermination("TERMINATE")
 
     team = RoundRobinGroupChat(
         participants=[data_analyzer_agent, code_executor_agent],

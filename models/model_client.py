@@ -53,7 +53,7 @@ anthropic_model_client = AnthropicChatCompletionClient(
 
 
 ollama_model_client = OllamaChatCompletionClient(
-    model="dolphin3:latest",
+    model="phi4",
     model_info={
         "vision": True,
         "function_calling": True,
@@ -65,4 +65,4 @@ ollama_model_client = OllamaChatCompletionClient(
 
 
 def get_model_client():
-    return open_router_model_client
+    return ollama_model_client
