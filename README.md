@@ -78,7 +78,7 @@ AnalyserGPT is a powerful data analysis tool that leverages AI to process datase
    ```
 2. Provide tasks like:
    ```
-   Can you analyze the titanic.csv dataset, generate a graph of survived and died passengers grouped by class, and save it as output.png? Additionally, provide a summary of the survival rate for each class in a text file named summary.txt.
+   Can you analyze the data.csv dataset, generate a graph of survived and died passengers grouped by class, and save it as output.png? Additionally, provide a summary of the survival rate for each class in a text file named summary.txt.
    ```
 
 ## File Structure
