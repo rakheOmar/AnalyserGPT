@@ -5,13 +5,23 @@ from autogen_ext.models.ollama import OllamaChatCompletionClient
 from autogen_ext.models.openai import OpenAIChatCompletionClient
 from dotenv import load_dotenv
 
-load_dotenv()
+try:
+    import streamlit as st
 
-OPEN_AI = os.getenv("OPENAI_API_KEY")
-GEMINI = os.getenv("GEMINI_API_KEY")
-OPEN_ROUTER = os.getenv("OPEN_ROUTER_API_KEY")
-GROQ = os.getenv("GROQ_API_KEY")
-ANTROPHIC = os.getenv("ANTROPHIC_API_KEY")
+    OPEN_AI = st.secrets.get("OPENAI_API_KEY", os.getenv("OPENAI_API_KEY"))
+    GEMINI = st.secrets.get("GEMINI_API_KEY", os.getenv("GEMINI_API_KEY"))
+    OPEN_ROUTER = st.secrets.get(
+        "OPEN_ROUTER_API_KEY", os.getenv("OPEN_ROUTER_API_KEY")
+    )
+    GROQ = st.secrets.get("GROQ_API_KEY", os.getenv("GROQ_API_KEY"))
+    ANTROPHIC = st.secrets.get("ANTROPHIC_API_KEY", os.getenv("ANTROPHIC_API_KEY"))
+except Exception:
+    load_dotenv()
+    OPEN_AI = os.getenv("OPENAI_API_KEY")
+    GEMINI = os.getenv("GEMINI_API_KEY")
+    OPEN_ROUTER = os.getenv("OPEN_ROUTER_API_KEY")
+    GROQ = os.getenv("GROQ_API_KEY")
+    ANTROPHIC = os.getenv("ANTROPHIC_API_KEY")
 
 gemini_model_client = OpenAIChatCompletionClient(
     api_key=GEMINI,  # type: ignore

@@ -14,6 +14,9 @@ wheels/
 .env.local
 .env.*.local
 
+# Streamlit secrets
+.streamlit/secrets.toml
+
 # Temporary files
 ./temp/tmp_code*
 ./temp/output.png

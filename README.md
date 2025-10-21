@@ -14,8 +14,6 @@ AnalyserGPT is a powerful data analysis tool that leverages AI to process datase
 - **Text Summaries**: Generate textual summaries of data insights.
 - **Docker Integration**: Runs in a Dockerized environment for easy setup and isolation.
 
-
-
 ## Prerequisites
 
 - Python 3.8+
@@ -33,9 +31,44 @@ AnalyserGPT is a powerful data analysis tool that leverages AI to process datase
    cd AnalyserGPT
    ```
 3. Install dependencies:
+
    ```bash
    uv sync
    ```
+
+4. **Set up API Keys:**
+
+   **For Local Development:**
+
+   - Copy `.streamlit/secrets.toml.example` to `.streamlit/secrets.toml`
+   - Or create a `.env` file in the project root
+   - Add your API keys:
+
+   ```toml
+   OPENAI_API_KEY = "your-key-here"
+   GEMINI_API_KEY = "your-key-here"
+   OPEN_ROUTER_API_KEY = "your-key-here"
+   GROQ_API_KEY = "your-key-here"
+   ANTROPHIC_API_KEY = "your-key-here"
+   ```
+
+   **For Streamlit Community Cloud:**
+
+   1. Go to your app dashboard on [share.streamlit.io](https://share.streamlit.io)
+   2. Click on your deployed app
+   3. Click the **⚙️ Settings** button
+   4. Go to the **Secrets** section
+   5. Add your API keys in TOML format:
+
+   ```toml
+   OPENAI_API_KEY = "your-key-here"
+   GEMINI_API_KEY = "your-key-here"
+   OPEN_ROUTER_API_KEY = "your-key-here"
+   GROQ_API_KEY = "your-key-here"
+   ANTROPHIC_API_KEY = "your-key-here"
+   ```
+
+   6. Click **Save**
 
 ## Usage
 
@@ -55,7 +88,6 @@ AnalyserGPT is a powerful data analysis tool that leverages AI to process datase
 - `models/`: Client for interacting with AI models.
 - `teams/`: Team logic for coordinating tasks.
 - `temp/`: Temporary files and outputs.
-
 
 ## License
 
